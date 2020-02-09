@@ -15,13 +15,13 @@ import com.souza.service.HellowordService;
 
 
 @RestController
-@RequestMapping("/api/v1/helloword")
+@RequestMapping("v1")
 public class HellowordController {
 	
 	@Autowired
 	HellowordService hellowordService;
 	
-	@GetMapping("/{codigo}")
+	@GetMapping("helloword/{codigo}")
 	public Response<EstadoDTO> acessoService(@PathVariable ("codigo") Integer codigo) {
 		Response<EstadoDTO> response = new Response<EstadoDTO>();
 		
@@ -30,7 +30,7 @@ public class HellowordController {
 	}
 	
 
-	@GetMapping("")
+	@GetMapping("helloword")
 	public Response<List<EstadoDTO>> estados() {
 		Response<List<EstadoDTO>> response = new Response<List<EstadoDTO>>();
 		
